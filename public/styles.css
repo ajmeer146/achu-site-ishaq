@@ -1,0 +1,211 @@
+/* Birthday Page for Ishaq - Professional Corporate Style */
+:root {
+  --bg-primary: #f0f4f8;
+  --bg-surface: #ffffff;
+  --bg-card: #ffffff;
+  --text-primary: #1e293b;
+  --text-secondary: #64748b;
+  --accent-primary: #2563eb;
+  --accent-hover: #1d4ed8;
+  --border-subtle: rgba(0,0,0,0.1);
+  --shadow-card: 0 2px 8px -2px rgba(37,99,235,0.12), 0 1px 4px -1px rgba(0,0,0,0.08);
+  --radius-md: 8px;
+  --radius-sm: 4px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+ul, ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Segoe UI", Arial, Helvetica, "Noto Sans", sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.6;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 0.75rem;
+  }
+}
+
+header {
+  padding: 5rem 0;
+  text-align: center;
+  background: linear-gradient(135deg, #e2e8f0, #f0f4f8);
+}
+
+header h1 {
+  font-size: clamp(2rem, 5vw, 2.5rem);
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+
+.birthday-card {
+  background: var(--bg-card);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+  padding: 2rem;
+  margin: 4rem 0;
+}
+
+.birthday-card h2 {
+  font-size: 1.875rem;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.birthday-card p {
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+  text-align: center;
+  font-size: 1.05rem;
+}
+
+.birthday-details {
+  display: flex;
+  justify-content: space-around;
+  margin: 2rem 0;
+}
+
+.detail-item {
+  text-align: center;
+}
+
+.detail-label {
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.detail-value {
+  font-weight: 600;
+  color: var(--accent-primary);
+  font-size: 1.2rem;
+}
+
+.well-wishes {
+  margin: 2rem 0;
+}
+
+.well-wishes h3 {
+  color: var(--accent-primary);
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+}
+
+.well-wishes ul {
+  list-style: none;
+  margin: 0;
+  padding: 0 1rem;
+}
+
+.well-wishes li {
+  margin-bottom: 0.75rem;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.well-wishes li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--accent-primary);
+  font-weight: bold;
+}
+
+.cta-section {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.875rem 2rem;
+  background-color: var(--accent-primary);
+  color: white;
+  text-decoration: none;
+  border-radius: var(--radius-sm);
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: var(--accent-hover);
+}
+
+.btn:focus {
+  outline: 2px solid var(--accent-primary);
+  outline-offset: 2px;
+}
+
+footer {
+  padding: 3rem 0;
+  background-color: #e2e8f0;
+  text-align: center;
+  color: var(--text-secondary);
+  margin-top: 4rem;
+}
+
+footer p {
+  font-size: 0.9rem;
+}
+
+/* Animations */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* Entrance animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.birthday-card {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+/* Stagger effect for details */
+.detail-item {
+  animation: fadeInUp 0.6s ease-out forwards;
+  opacity: 0;
+}
+
+.detail-item:nth-child(1) { animation-delay: 0.1s; }
+.detail-item:nth-child(2) { animation-delay: 0.2s; }
+.detail-item:nth-child(3) { animation-delay: 0.3s; }
